@@ -1,0 +1,5 @@
+[
+  { "question":"De quelle couleur n'est pas une banane pas mûre?", "choices":["Vert", "Jaune"], "answer":"Jaune"},
+  { "question":"abs(2 x (3+4) - 51)", "choices":["37", "-27"], "answer":"37"},
+  { "question":"", "choices":["", ""], "answer":""},
+]

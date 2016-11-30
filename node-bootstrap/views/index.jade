@@ -1,0 +1,16 @@
+extends layout
+
+block head
+    h1(class="header-title") Chasse au trésor 2016
+
+block cont
+    - var questions = [];
+    -jsonfile.readFile('/resources/questions.json', function(err, obj) {
+    -questions.push(obj);
+    -});
+    ul
+        each question in questions
+            li question.question
+
+//    div(class="p1-question") question
+//    div(class="p1-response") réponse
