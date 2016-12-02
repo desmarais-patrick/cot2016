@@ -1,6 +1,6 @@
 # extreme-quiz
 
-## Procédure ajout de questions:
+## Procédure d'ajout de questions:
 1. Ajouter des vos questions dans le csv.
 2. Utilisez le site http://www.csvjson.com/csv2json pour convertir en Json
 
