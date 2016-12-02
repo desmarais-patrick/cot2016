@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "question": "De quelle couleur est la banane ?",
+    "choice1": "jaune",
+    "choice2": "bleu",
+    "choice3": "orange",
+    "answer": 1
+  },
+  {
+    "id": 2,
+    "question": "De quelle couleur est le divan dans le bureau de Mario ?",
+    "choice1": "noir",
+    "choice2": "gris",
+    "choice3": "brun",
+    "answer": 2
+  },
+  {
+    "id": 3,
+    "question": "Vancouver est la capitale de la Colombie-Britannique",
+    "choice1": "oui",
+    "choice2": "non",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 4,
+    "question": "Julien est le chef d'équipe de l'équipe Backend",
+    "choice1": "oui",
+    "choice2": "non",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 5,
+    "question": "Qui a écrit Imagine ?",
+    "choice1": "John Lennon",
+    "choice2": "Paul McCartney",
+    "choice3": "Ringo Starr",
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "question": "Combien avez-vous de doigts ?",
+    "choice1": 5,
+    "choice2": 10,
+    "choice3": 4,
+    "answer": 2
+  },
+  {
+    "id": 7,
+    "question": "Combien de pattes ont les insectes ?",
+    "choice1": 8,
+    "choice2": 6,
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 8,
+    "question": "Combien de dents a un humain adulte ?",
+    "choice1": 32,
+    "choice2": 28,
+    "choice3": 30,
+    "answer": 1
+  },
+  {
+    "id": 9,
+    "question": "Quelle est la capitale de l'Australie",
+    "choice1": "Canberra",
+    "choice2": "Sydney",
+    "choice3": "Brisbane",
+    "answer": 1
+  },
+  {
+    "id": 10,
+    "question": "Steven est programmeur front-end chez Stinger ?",
+    "choice1": "Non",
+    "choice2": "Oui",
+    "choice3": "",
+    "answer": 1
+  },
+  {
+    "id": 11,
+    "question": "Trouvez l'intrus : Lapin, Chien, Lion, Avion, Éléphant",
+    "choice1": "Avion",
+    "choice2": "Lapin",
+    "choice3": "Chien",
+    "answer": 1
+  },
+  {
+    "id": 12,
+    "question": "Quelle est la circonférence d'un cercle ?",
+    "choice1": "pi r^2",
+    "choice2": "2pi R",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 13,
+    "question": "Quelle est la 10e lettre de l'alphabet ?",
+    "choice1": "J",
+    "choice2": "I",
+    "choice3": "K",
+    "answer": 1
+  },
+  {
+    "id": 14,
+    "question": "Choisissez la couleur",
+    "choice1": "rouge",
+    "choice2": "patate",
+    "choice3": "auto",
+    "answer": 1
+  },
+  {
+    "id": 15,
+    "question": "Combien de sommets à un cube ?",
+    "choice1": 10,
+    "choice2": 8,
+    "choice3": 6,
+    "answer": 2
+  },
+  {
+    "id": 16,
+    "question": "Quelle est la capitale de la Nouvelle-Galles du Sud ?",
+    "choice1": "Sydney",
+    "choice2": "Cardiff",
+    "choice3": "",
+    "answer": 1
+  },
+  {
+    "id": 17,
+    "question": "Combien de personnes permanentes dans l'équipe Backend ?",
+    "choice1": 6,
+    "choice2": 5,
+    "choice3": 7,
+    "answer": 1
+  },
+  {
+    "id": 18,
+    "question": "Jaques à décidé de s'attaquer à Fran. Combien de fois il doit répéter ?",
+    "choice1": 32,
+    "choice2": 45,
+    "choice3": 21,
+    "answer": 2
+  },
+  {
+    "id": 19,
+    "question": "Qu'est-ce qu'on fait en 8 ?",
+    "choice1": "Dance",
+    "choice2": "Noeud",
+    "choice3": "Gâteau",
+    "answer": 2
+  },
+  {
+    "id": 20,
+    "question": "Combien de km dans un marathon ?",
+    "choice1": 21,
+    "choice2": 42,
+    "choice3": 10,
+    "answer": 2
+  },
+  {
+    "id": 21,
+    "question": "La station Champs-de-Mars est sur quelle ligne ?",
+    "choice1": "Bleu",
+    "choice2": "Orange",
+    "choice3": "Jaune",
+    "answer": 2
+  },
+  {
+    "id": 22,
+    "question": "Combien il y a de lignes de métro à Montréal ?",
+    "choice1": 5,
+    "choice2": 4,
+    "choice3": 6,
+    "answer": 2
+  }
+]

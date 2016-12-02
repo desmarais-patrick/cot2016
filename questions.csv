@@ -1,0 +1,23 @@
+id,question,choice1,choice2,choice3,answer
+1,De quelle couleur est la banane ?,jaune,bleu,orange,1
+2,De quelle couleur est le divan dans le bureau de Mario ?,noir,gris,brun,2
+3,Vancouver est la capitale de la Colombie-Britannique ,oui,non,,2
+4,Julien est le chef d'équipe de l'équipe Backend,oui ,non,,2
+5,Qui a écrit Imagine ?,John Lennon,Paul McCartney,Ringo Starr,1
+6,Combien avez-vous de doigts ?,5,10,4,2
+7,Combien de pattes ont les insectes ?,8,6,,2
+8,Combien de dents a un humain adulte ?,32,28,30,1
+9,Quelle est la capitale de l'Australie,Canberra,Sydney,Brisbane,1
+10,Steven est programmeur front-end chez Stinger ?,Non,Oui,,1
+11,"Trouvez l'intrus : Lapin, Chien, Lion, Avion, Éléphant",Avion,Lapin,Chien,1
+12,Quelle est la circonférence d'un cercle ?,pi r^2,2pi R,,2
+13,Quelle est la 10e lettre de l'alphabet ?,J,I,K,1
+14,Choisissez la couleur,rouge,patate,auto,1
+15,Combien de sommets à un cube ? ,10,8,6,2
+16,Quelle est la capitale de la Nouvelle-Galles du Sud ?,Sydney,Cardiff,,1
+17,Combien de personnes permanentes dans l'équipe Backend ?,6,5,7,1
+18,Jaques à décidé de s'attaquer à Fran. Combien de fois il doit répéter ?,32,45,21,2
+19,Qu'est-ce qu'on fait en 8 ?,Dance,Noeud,Gâteau,2
+20,Combien de km dans un marathon ? ,21,42,10,2
+21,La station Champs-de-Mars est sur quelle ligne ?,Bleu,Orange,Jaune,2
+22,Combien il y a de lignes de métro à Montréal ?,5,4,6,2
