@@ -1,0 +1,12 @@
+extends layout
+
+block head
+    h1(class="header-title") Trouvez l'intrus !
+block cont
+ 
+    ul
+        each question in global.donnees.intrus.questions
+            li question.question
+
+//    div(class="p1-question") question
+//    div(class="p1-response") réponse

@@ -1,13 +1,20 @@
-var express = require('express');
-var router = express.Router();
-var questions = require('../questions.json');
+var questions = require('../intrus/questions.json');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+global.donnees.intrus = {};
+global.donnees.intrus.questions = questions;
+
+var donnees = global.donnees.intrus;
+donnees.init_time = 0;
+donnees.time_set = false;
+
+global.routeur.get('/intrus', function(req, res, next) {
+  res.render('intrus', { title: 'Trouve cet intrus' });
+  if (!donnees.time_set) {
+	  donnees.init_time = new Date();  
+  }
 });
 
-router.get('/nextQuestion', function(req, res, next) {
+global.routeur.get('/nextQuestion', function(req, res, next) {
   var nextQuestion = {};
   var nextQuestionId = 0;
 
@@ -44,6 +51,3 @@ router.get('/nextQuestion', function(req, res, next) {
     res.send(nextQuestion)
   }
 });
-
-
-module.exports = router;

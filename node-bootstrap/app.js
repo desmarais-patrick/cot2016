@@ -6,8 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var jsonfile = require('jsonfile');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+global.donnees = {}; // Données applicatives
+global.routeur = express.Router();
+
+var bonjour = require('./routes/bonjour');
+var questionnaire = require('./routes/questionnaire');
+var secret = require('./routes/secret');
+var courir = require('./routes/courir');
+var intrus = require('./routes/intrus');
 
 var app = express();
 
@@ -24,8 +30,11 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', global.routeur);
+app.use('/questionnaire', global.routeur);
+app.use('/secret', global.routeur);
+app.use('/courir', global.routeur);
+app.use('/intrus', global.routeur);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
