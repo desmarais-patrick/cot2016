@@ -1,6 +1,17 @@
 # extreme-quiz
 
 ## API
+ 
+### Structure:
+ app.js contient les références aux différentes routes
+ 
+ Objet ```global.donnees``` contient toutes les données applicatives des épreuves
+ Chaque épreuve définit ses données dans le fichier .js associé.
+ 
+ Le routeur Express est maintenant contenu dans global.routeur. Pour ajouter des routes, vous devez vous servir de cet objet.
+ 
+ Par épreuve, assurez-vous que les toutes routes sont uniques. 
+
 ### Spec:
  /nextQuestion?answer=<Int> answer est optionnel. Possibilité d'ajouter &timoutdisabled=true pour debugger sans revenir au début
 
