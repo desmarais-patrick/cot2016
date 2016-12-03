@@ -30,12 +30,12 @@ http://localhost:3000/nextQuestion?answer=2
 ### Todos:
 Le tout semble fonctionnel, il reste seulement ceci à compléter:
 
-*Quelle genre de réponse on retourne lorsqu'on a répondu à toutes les questions ?
-*Quelle genre de réponse on retourne lorsqu'on a plus de temps pour compléter le jeux et on doit passer au suivant ?
-*Inclure les questions à Julien
-*Ajouter des nouvelles questions
-*Ajouter p-e du random si on a du temps
-*Rendre le code plus beau, car fait vite (pas très grave)
+-Quelle genre de réponse on retourne lorsqu'on a répondu à toutes les questions ?
+-Quelle genre de réponse on retourne lorsqu'on a plus de temps pour compléter le jeux et on doit passer au suivant ?
+-Inclure les questions à Julien
+-Ajouter des nouvelles questions
+-Ajouter p-e du random si on a du temps
+-Rendre le code plus beau, car fait vite (pas très grave)
 
 ## Procédure d'ajout de questions:
 1. Ajoutez vos questions dans le csv.
