@@ -4,6 +4,7 @@
 ### Spec:
  /nextQuestion?answer=<Int> answer est optionnel. Possibilité d'ajouter &timoutdisabled=true pour debugger sans revenir au début
 
+```javascript
  response:
 {
     "previousError":bool, //Indique que la question précédente n'a pas bien été répondue. Affichez un message au FE
@@ -12,15 +13,18 @@
     "choice1":String, //Le premier choix de réponse
     "choice2":String //Le 2ieme choix de réponse
 } 
+```
 
 ### Exemple:
 http://localhost:3000/nextQuestion?answer=2
+```javascript
 {
     "previousError":true, 
     "question":"De quelle couleur est la banane ?",
     "choice1":"jaune",
     "choice2":"bleu"
 }
+```
 
 
 ### Todos:
