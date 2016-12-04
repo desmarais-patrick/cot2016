@@ -5,8 +5,11 @@ block head
 
 block cont
     ul
-        each question in global.donnees.questionnaire.questions
-            li question.question
+        each q in global.donnees.questionnaire.questions
+            h2= q.question
+                h3= q.choice1
+                h3= q.choice2
+                h3= q.choice3
 
 //    div(class="p1-question") question
 //    div(class="p1-response") réponse

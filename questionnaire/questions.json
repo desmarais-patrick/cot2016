@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "question": "Julien est le chef d'équipe de l'équipe Backend",
+    "question": "Julien est le chef d'Ã©quipe de l'Ã©quipe Backend",
     "choice1": "oui",
     "choice2": "non",
     "choice3": "",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "question": "Qui a écrit Imagine ?",
+    "question": "Qui a Ã©crit Imagine ?",
     "choice1": "John Lennon",
     "choice2": "Paul McCartney",
     "choice3": "Ringo Starr",
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "question": "Trouvez l'intrus : Lapin, Chien, Lion, Avion, Éléphant",
+    "question": "Trouvez l'intrus : Lapin, Chien, Lion, Avion, Ã‰lÃ©phant",
     "choice1": "Avion",
     "choice2": "Lapin",
     "choice3": "Chien",
@@ -89,10 +89,10 @@
   },
   {
     "id": 12,
-    "question": "Quelle est la circonférence d'un cercle ?",
+    "question": "Quelle est la circonfÃ©rence d'un cercle ?",
     "choice1": "pi r^2",
     "choice2": "2pi R",
-    "choice3": "",
+    "choice3": "4pi R^3",
     "answer": 2
   },
   {
@@ -113,7 +113,7 @@
   },
   {
     "id": 15,
-    "question": "Combien de sommets à un cube ?",
+    "question": "Combien de sommets Ã  un cube ?",
     "choice1": 10,
     "choice2": 8,
     "choice3": 6,
@@ -129,7 +129,7 @@
   },
   {
     "id": 17,
-    "question": "Combien de personnes permanentes dans l'équipe Backend ?",
+    "question": "Combien de personnes permanentes dans l'Ã©quipe Backend ?",
     "choice1": 6,
     "choice2": 5,
     "choice3": 7,
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "question": "Jaques à décidé de s'attaquer à Fran. Combien de fois il doit répéter ?",
+    "question": "Jaques a dÃ©cidÃ© de s'attaquer Ã  Fran. Combien de fois il doit rÃ©pÃ©ter ?",
     "choice1": 32,
     "choice2": 45,
     "choice3": 21,
@@ -148,7 +148,7 @@
     "question": "Qu'est-ce qu'on fait en 8 ?",
     "choice1": "Dance",
     "choice2": "Noeud",
-    "choice3": "Gâteau",
+    "choice3": "GÃ¢teau",
     "answer": 2
   },
   {
@@ -169,7 +169,7 @@
   },
   {
     "id": 22,
-    "question": "Combien il y a de lignes de métro à Montréal ?",
+    "question": "Combien il y a de lignes de mÃ©tro Ã  MontrÃ©al ?",
     "choice1": 5,
     "choice2": 4,
     "choice3": 6,
