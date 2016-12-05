@@ -15,7 +15,7 @@ donnees.nxt_question_disponible = false;
 global.routeur.get('/questionnaire', function(req, res, next) {
   res.render('questionnaire', { title: 'Questionaire débilitant' });
   if (!donnees.time_set) {
-	  donnees.init_time = new Date();  
+	  donnees.init_time = new Date();
   }
 });
 
@@ -27,9 +27,9 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
     res.cookie('initdate', new Date(), { expires: new Date(253402300000000) })
   }
 
-  if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 600000) { //TODO 5 minutes. voir si on met plus de temps
+  if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 600000) { //TODO 10 minutes. voir si on met plus de temps
     res.send('pu de temps pour faire le test. passer au suivant');
-    return; 
+    return;
   }
 
   if (req.cookies.currentQuestion) {
@@ -43,13 +43,13 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
       nextQuestion.previousError = true;
     }
   }
-  
+
   if (nextQuestionId > questions.length) {
     res.send('succes. redirect somewhere'); //TODO handler mieux la reponse
   } else {
     nextQuestion.question = questions[nextQuestionId].question;
     nextQuestion.choice1 = questions[nextQuestionId].choice1;
-    nextQuestion.choice2 = questions[nextQuestionId].choice2; 
+    nextQuestion.choice2 = questions[nextQuestionId].choice2;
     res.cookie('currentQuestion', nextQuestionId, { expires: new Date(253402300000000) })
     res.cookie('currentQuestionInitDate', new Date(), { expires: new Date(253402300000000) })
     res.send(nextQuestion)

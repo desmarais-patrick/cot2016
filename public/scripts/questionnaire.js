@@ -1,17 +1,30 @@
 (function (moment) {
   $(document).ready(function () {
+    // TODO Update quizTime.
+    // TODO Give callback when quizTime runs out.
+    // TODO Prevent submit by default.
+    // TODO Add handler to submit.
     getNextQuestion();
-    //updateClock("#quiz-time", endTime, gameOver);
-    //updateClock("#question-time", questionTime, startOver);
   });
 
   function getNextQuestion() {
     $.ajax("/questionnaire/nextquestion")
       .done(function(data) {
-        if ( console && console.log ) {
-          console.log( "Sample of data:", data.slice( 0, 100 ) );
+        if (typeof data === "string") {
+          // TODO Send to appropriate SUCCESS or FAIL page.
+          alert(data);
+        } else {
+          updateQuestion(data.question, data.choice1, data.choice2);
         }
-      })
+      });
+  }
+
+  function updateQuestion(question, choice1, choice2) {
+    $("#questionTitle").text(question);
+    $("#questionChoice1").text(choice1);
+    $("#questionChoice2").text(choice2);
+    // TODO: Update questionTime.
+    // TODO: Give callback when questionTime runs out.
   }
 
   function updateClock(selector, referenceTime, callback) {
