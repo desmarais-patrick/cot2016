@@ -1,8 +1,8 @@
 (function (moment) {
-  $(document).ready(function () {
-    updateClock(".clock-general", endTime, gameOver);
-    updateClock(".clock-question", questionTime, startOver);
-  });
+  // $(document).ready(function () {
+  //   updateClock(".clock-general", endTime, gameOver);
+  //   updateClock(".clock-question", questionTime, startOver);
+  // });
 
   function updateClock(selector, referenceTime, callback) {
     var clockElem = $(selector);

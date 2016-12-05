@@ -1,4 +1,5 @@
 /** Taken from https://v4-alpha.getbootstrap.com/examples/cover/cover.css */
+@import "variables.less";
 
 /*
  * Globals
@@ -8,17 +9,17 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: @red;
 }
 
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #333;
+  color: @dark-green;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
-  border: .05rem solid #fff;
+  border: .05rem solid @dark-green;
 }
 
 
@@ -29,12 +30,9 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  color: @dark-green;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -43,8 +41,6 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -104,6 +100,23 @@ body {
   }
 }
 
+.masthead {
+  text-align: center;
+
+  h1 {
+    font-weight: 100;
+    margin-top: 2.5rem;
+
+    span.middle {
+      padding: 0 40px;
+    }
+  }
+
+  p {
+    font-weight: 200;
+  }
+}
+
 
 /*
  * Cover
@@ -124,39 +137,11 @@ body {
 
 .mastfoot {
   color: rgba(255,255,255,.5);
+  text-align: center;
 }
 
-
-/*
- * Affix and center
- */
-
-@media (min-width: 40em) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 62em) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 42rem;
-  }
+.mastfoot img {
+  height: 60px;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
 }
