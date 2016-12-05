@@ -1,37 +1,31 @@
-body {
-  background-image: url("/resources/background2.jpg");
-  background-size: 100%;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import "cover.less";
+
+.bonjour {
+  &.bonjour-head,
+  &.bonjour-cont,
+  .launch-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  h2 {
+    margin-bottom: 2.5rem;
+  }
+  .challenge {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .launch-section {
+    padding-top: 60px;
+  }
 }
 
-a {
-  color: #00B7FF;
-}
-
-.header-div {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.header-title {
-  padding-left: 10px;
-  color: #ffffff;
-  font-family: 'Raleway',
-  sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 72px;
-  margin: 0 0 24px;
-  text-align: center;
-  text-transform: uppercase;
+.challenge-head,
+.challenge-body,
+.challenge-footer {
+  margin-bottom: 2.5rem;
 }
 
 .p1-question {
   font-size: 26px;
   padding-bottom: 20px;
-}
-
-.header-image {
-  height: 200px;
 }

@@ -1,13 +1,40 @@
 extends layout
 
 block head
-    h1(class="header-title") Bonjour ! Chasse au trésor 2016
+  .container-fluid.bonjour.bonjour-head
+    .row
+      .col-sm-6
+        p(style='margin-top: 1rem') Bienvenue au défi de l'équipe:
+      .col-sm-6.text-xs-center
+        img.img-fluid.img-thumbnail(src='/resources/bubblesugar.jpg', style='height: 200px')
+        p.lead bubblesugar
 
 block cont
-    p Bonjour et bienvenue à la chasse au trésor 2016 blahblah
-    h2 Les règles
-    p ...
-    h2 Les épreuves
-    p ...
-    h2 Allez-y
-    p ... Bouton Go !
+  .container-fluid.bonjour.bonjour-cont
+    h2 Épreuves
+    .row
+      .col-sm-2
+        p.small.text-xs-center statut
+    .row.challenge
+      .col-sm-2
+        p.lead.text-xs-center ?
+      .col-sm-9
+        p.lead Épreuve 1
+    .row.challenge
+      .col-sm-2
+        p.lead.text-xs-center ?
+      .col-sm-9
+        p.lead Épreuve 2
+    .row.challenge
+      .col-sm-2
+        p.lead.text-xs-center ?
+      .col-sm-9
+        p.lead Épreuve 3
+    .row.challenge
+      .col-sm-2
+        p.lead.text-xs-center ?
+      .col-sm-9
+        p.lead Épreuve 3
+    .launch-section
+      p.text-xs-center
+        a.btn.btn-secondary(href='/questionnaire') Commencer

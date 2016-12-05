@@ -1,15 +1,44 @@
 extends layout
 
 block head
-    h1(class="header-title") Questionnaire débilitant
+  .container-fluid.challenge-head.questionnaire
+    .row
+      .col-sm-10
+        p(style='margin-bottom: .5rem') Épreuve 1:
+        h2
+          span.mark Questionnaire débilitant
+      .col-sm-2
+        p.lead.text-xs-center(style='margin-top: 2rem')
+          span#quizTime 10:00
 
 block cont
-    ul
-        each q in global.donnees.questionnaire.questions
-            h2= q.question
-                h3= q.choice1
-                h3= q.choice2
-                h3= q.choice3
+  .challenge-body.questionnaire
+    .container-fluid
+      .row
+        .col-sm-10
+          p(style='margin-bottom: .5rem') Question #1:
+          h3
+            span#questionTitle Quelle est la couleur de la banane?
+        .col-sm-2
+          p.lead.mark.text-xs-center(style='margin-top: 2rem')
+            span#questionTime 5
+            br
+            small sec
+      form(action='/questionnaire/nextquestion')
+        fieldset.form-group
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='radio', name='answer', value='option1')
+              span#questionChoice1 Jaune
+          .form-check
+            .form-check-label
+              input.form-check-input(type='radio', name='answer', value='option2')
+              span#questionChoice2 Bleu
+        .text-xs-center
+          button.btn.btn-primary(type='submit') Soumettre
+  .challenge-footer.questionnaire
+    .alert.alert-danger
+      p.small.text-xs-center(style='margin-bottom: 0') Indice: choisir la mauvaise réponse!
 
-//    div(class="p1-question") question
-//    div(class="p1-response") réponse
+block otherScripts
+  script(src='/scripts/questionnaire.js')
