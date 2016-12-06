@@ -9,11 +9,29 @@ block head
           span.mark Questionnaire débilitant
       .col-sm-2
         p.lead.text-xs-center(style='margin-top: 2rem')
-          span#quizTime 10:00
+          span#quizTime 10m 00s
 
 block cont
   .challenge-body.questionnaire
-    .container-fluid
+    .container-fluid#introSection
+      .row
+        .col-sm-8
+          p Voici la première épreuve de votre défi.
+          ul
+            li
+              p Le questionnaire comporte un temps total. Le temps commencera à s'écouler aussitôt que vous serez présenter la première question.
+            li
+              p Chaque question comporte un temps de réponse. Si le temps s'écoule, vous serez rediriger à la première question.
+            li
+              p Si vous ne choisissez pas la réponse attendue, vous serez rediriger à la première question.
+            li
+              p Finalement, faites attention! Il faut répondre la mauvaise réponse!
+      br
+      br
+      p.text-xs-center
+        button.btn.btn-secondary#questionStartTrigger Commencer cette épreuve
+
+    .container-fluid#questionSection(style='display:none')
       .row
         .col-sm-10
           p(style='margin-bottom: .5rem') Question #1:
@@ -24,21 +42,11 @@ block cont
             span#questionTime 5
             br
             small sec
-      form(action='/questionnaire/nextquestion')
-        fieldset.form-group
-          .form-check
-            label.form-check-label
-              input.form-check-input(type='radio', name='answer', value='1')
-              span#questionChoice1 Jaune
-          .form-check
-            .form-check-label
-              input.form-check-input(type='radio', name='answer', value='2')
-              span#questionChoice2 Bleu
-        .text-xs-center
-          button.btn.btn-primary(type='submit') Soumettre
-  .challenge-footer.questionnaire
-    .alert.alert-danger
-      p.small.text-xs-center(style='margin-bottom: 0') Indice: choisir la mauvaise réponse!
+      .row
+        .col-sm-6.offset-sm-0.col-md-5.offset-md-1.col-lg-4.offset-lg-2.text-xs-center(style='padding: 30px 0')
+          button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice1
+        .col-sm-6.col-md-5.col-lg-4.text-xs-center(style='padding: 30px 0')
+          button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice2
 
 block otherScripts
   script(src='/scripts/questionnaire.js')

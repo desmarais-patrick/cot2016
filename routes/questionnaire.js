@@ -25,6 +25,8 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
 
   if (!req.cookies.initdate) {
     res.cookie('initdate', new Date(), { expires: new Date(253402300000000) })
+  } else {
+    nextQuestion.startTime = req.cookies.initdate;
   }
 
   if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 600000) { //TODO 10 minutes. voir si on met plus de temps
@@ -55,7 +57,7 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
     result.success = true;
     result.durationMillis = new Date().getTime() - new Date(req.cookies.initdate).getTime();
     res.cookie('questionnaireResult', result, { expires: new Date(253402300000000) })
-    
+
     nextQuestion.url = '/';
     res.send(nextQuestion);
     return;

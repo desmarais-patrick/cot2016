@@ -1,30 +1,41 @@
 (function (moment) {
   $(document).ready(function () {
-    // TODO Update quizTime.
-    // TODO Give callback when quizTime runs out.
-    // TODO Prevent submit by default.
-    // TODO Add handler to submit.
-    getNextQuestion();
+    initializeStartTrigger();
+    // TODO Handle error message when timer runs out.
+    // TODO Handle error message when answer is wrong.
   });
 
-  function getNextQuestion() {
-    $.ajax("/questionnaire/nextquestion")
+  function initializeStartTrigger() {
+    $(QUESTION_START_TRIGGER_SELECTOR).click(function () {
+      $(INTRO_SECTION_SELECTOR).hide();
+      $(QUESTION_SECTION_SELECTOR).show();
+      getNextQuestion();
+      initializeAnswerTriggers();
+    });
+  }
+
+  function getNextQuestion(answer) {
+    var url = "/questionnaire/nextquestion";
+    if (answer)
+      url += "?answer=" + answer;
+
+    $.ajax(url)
       .done(function(data) {
-        if (typeof data === "string") {
-          // TODO Send to appropriate SUCCESS or FAIL page.
-          alert(data);
+        if (data.url) {
+          window.location = data.url;
         } else {
+          if (!startTime) {
+            startTime = moment(data.startTime);
+            updateQuizTimer();
+          }
           updateQuestion(data.question, data.choice1, data.choice2);
         }
       });
   }
 
-  function updateQuestion(question, choice1, choice2) {
-    $("#questionTitle").text(question);
-    $("#questionChoice1").text(choice1);
-    $("#questionChoice2").text(choice2);
-    // TODO: Update questionTime.
-    // TODO: Give callback when questionTime runs out.
+  function updateQuizTimer() {
+    var endTime = startTime.add(10, "m");
+    updateClock(QUIZ_TIME_SELECTOR, endTime, gameOver);
   }
 
   function updateClock(selector, referenceTime, callback) {
@@ -44,6 +55,7 @@
     clockElem.text(newText);
 
     if (0 < secondsLeft) {
+      // TODO Stop the previous clock before starting a new one!!!
       setTimeout(function () {
         updateClock(selector, referenceTime, callback)
       }, 500);
@@ -52,14 +64,35 @@
     }
   }
 
+  function updateQuestion(question, choice1, choice2) {
+    $(QUESTION_TITLE_SELECTOR).text(question);
+    $(QUESTION_CHOICE_1_SELECTOR).text(choice1);
+    $(QUESTION_CHOICE_2_SELECTOR).text(choice2);
+    updateClock(QUESTION_TIME_SELECTOR, moment().add(5, 's'), getNextQuestion);
+  }
+
   function gameOver() {
-    $(".cover").empty().text("Game Over");
+    $(QUIZ_TIME_SELECTOR).css("color", "red");
+    getNextQuestion();
   }
 
-  function startOver() {
-    window.location = "/etape1.html";
+  function initializeAnswerTriggers() {
+    $(QUESTION_CHOICE_1_SELECTOR).click(function () {
+      getNextQuestion(1);
+    });
+    $(QUESTION_CHOICE_2_SELECTOR).click(function () {
+      getNextQuestion(2);
+    });
   }
 
-  var endTime = moment().add(15, "s");
-  var questionTime = moment().add(10, "s");
+  var INTRO_SECTION_SELECTOR = "#introSection";
+  var QUESTION_CHOICE_1_SELECTOR = "#questionChoice1";
+  var QUESTION_CHOICE_2_SELECTOR = "#questionChoice2";
+  var QUESTION_SECTION_SELECTOR = "#questionSection";
+  var QUESTION_START_TRIGGER_SELECTOR = "#questionStartTrigger";
+  var QUESTION_TIME_SELECTOR = "#questionTime";
+  var QUESTION_TITLE_SELECTOR = "#questionTitle";
+  var QUIZ_TIME_SELECTOR = "#quizTime";
+
+  var startTime;
 })(moment);
