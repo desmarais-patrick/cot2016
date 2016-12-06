@@ -3,8 +3,39 @@ extends layout
 block head
     h1(class="header-title") La course, c'est bon pour la santé ! 
 
-block cont    
-    h2 Les règles
-    p ...   
-    h2 Allez-y
-    p ... Bouton Go !
+block cont
+  .container-fluid
+    .row
+        h2 Remplissez le formulaire suivant avec les bonnes réponses.
+    .row
+        h3 Vous pouvez essayer autant de réponses que vous le voulez.
+    .row
+        h3 Vous avez cinq (5) minutes!
+    .row
+        h4(class='subtle') ps. Attention dehors, ça glisse.
+    hr
+    form(action='/courir/submit')
+        fieldset.form-group
+            .row
+                .col-sm-5
+                    h1 Course #1
+                    div
+                        a(href='/photos/photo_borne.png' target='_blank')
+                            img(class='courir-photo' src='/photos/photo_borne.png')
+                    div
+                        h2 Numéro de la borne?
+                        input(name='answer_borne' class='input courir-input courir-input-borne')
+                .col-sm-2
+                .col-sm-5
+                    h1 Course #2
+                    div
+                        a(href='/photos/photo_rbq.png' target='_blank')
+                            img(class='courir-photo' src='/photos/photo_rbq.png')
+                    div
+                        h2 Numéro de la régie du bâtiment du Québec??
+                        input(name='answer_rbq' class='input courir-input courir-input-rbq')
+
+            button.btn.btn-secondary.btn-lg(type='submit') Soumettre
+
+block otherScripts
+    script(src='/scripts/courir.js')

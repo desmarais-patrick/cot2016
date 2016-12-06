@@ -13,6 +13,7 @@ var bonjour = require('./routes/bonjour');
 var questionnaire = require('./routes/questionnaire');
 var secret = require('./routes/secret');
 var courir = require('./routes/courir');
+var intrus = require('./routes/maths');
 var intrus = require('./routes/intrus');
 
 var app = express();
@@ -34,6 +35,7 @@ app.use('/', global.routeur);
 app.use('/questionnaire', global.routeur);
 app.use('/secret', global.routeur);
 app.use('/courir', global.routeur);
+app.use('/maths', global.routeur);
 app.use('/intrus', global.routeur);
 
 // catch 404 and forward to error handler

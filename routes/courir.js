@@ -11,3 +11,12 @@ global.routeur.get('/courir', function(req, res, next) {
 	  donnees.init_time = new Date();  
   }
 });
+
+global.routeur.get('/courir/submit', function(req, res, next) {
+    if (req.query.answer_borne === '760' &&
+        req.query.answer_rbq === '8210-9299-08') {
+        res.redirect('/secret')
+    } else {
+        res.status(204).send();
+    }
+});

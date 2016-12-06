@@ -1,0 +1,18 @@
+extends layout
+
+block head
+    h1(class="header-title") Tu sais pas courir, peut-être que tu sais calculer.
+
+block cont
+    hr
+    form(action='/maths/submit')
+        fieldset.form-group
+            .row
+                img(src='/photos/maths.png')
+            .row
+                input(name='answer_maths')
+            .row
+                button.btn.btn-secondary.btn-lg(type='submit') Soumettre
+
+block otherScripts
+    script(src='/scripts/maths.js')
