@@ -13,7 +13,25 @@ block head
 
 block cont
   .challenge-body.questionnaire
-    .container-fluid
+    .container-fluid#introSection
+      .row
+        .col-sm-8
+          p Voici la première épreuve de votre défi.
+          ul
+            li
+              p Le questionnaire comporte un temps total. Le temps commencera à s'écouler aussitôt que vous serez présenter la première question.
+            li
+              p Chaque question comporte un temps de réponse. Si le temps s'écoule, vous serez rediriger à la première question.
+            li
+              p Si vous ne choisissez pas la réponse attendue, vous serez rediriger à la première question.
+            li
+              p Finalement, faites attention! Il faut répondre la mauvaise réponse!
+      br
+      br
+      p.text-xs-center
+        a.btn.btn-secondary Commencer cette épreuve
+
+    .container-fluid#questionSection(style='display:none')
       .row
         .col-sm-10
           p(style='margin-bottom: .5rem') Question #1:
@@ -36,9 +54,6 @@ block cont
               span#questionChoice2 Bleu
         .text-xs-center
           button.btn.btn-primary(type='submit') Soumettre
-  .challenge-footer.questionnaire
-    .alert.alert-danger
-      p.small.text-xs-center(style='margin-bottom: 0') Indice: choisir la mauvaise réponse!
 
 block otherScripts
   script(src='/scripts/questionnaire.js')
