@@ -51,6 +51,11 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
   }
 
   if (nextQuestionId > questions.length) {
+    var result = {};
+    result.success = true;
+    result.durationMillis = new Date().getTime() - new Date(req.cookies.initdate).getTime();
+    res.cookie('questionnaireResult', result, { expires: new Date(253402300000000) })
+    
     nextQuestion.url = '/';
     res.send(nextQuestion);
     return;
