@@ -1,11 +1,19 @@
 (function (moment) {
   $(document).ready(function () {
+    initializeStartTrigger();
     // TODO Update quizTime.
     // TODO Give callback when quizTime runs out.
     // TODO Prevent submit by default.
     // TODO Add handler to submit.
     getNextQuestion();
   });
+
+  function initializeStartTrigger() {
+    $("#questionStartTrigger").click(function () {
+      $("#introSection").hide();
+      $("#questionSection").show();
+    });
+  }
 
   function getNextQuestion() {
     $.ajax("/questionnaire/nextquestion")
