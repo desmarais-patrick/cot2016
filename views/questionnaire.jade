@@ -9,7 +9,7 @@ block head
           span.mark Questionnaire débilitant
       .col-sm-2
         p.lead.text-xs-center(style='margin-top: 2rem')
-          span#quizTime 10:00
+          span#quizTime 10m 00s
 
 block cont
   .challenge-body.questionnaire
@@ -42,18 +42,11 @@ block cont
             span#questionTime 5
             br
             small sec
-      form(action='/questionnaire/nextquestion')
-        fieldset.form-group
-          .form-check
-            label.form-check-label
-              input.form-check-input(type='radio', name='answer', value='1')
-              span#questionChoice1 Jaune
-          .form-check
-            .form-check-label
-              input.form-check-input(type='radio', name='answer', value='2')
-              span#questionChoice2 Bleu
-        .text-xs-center
-          button.btn.btn-primary(type='submit') Soumettre
+      .row
+        .col-sm-6.offset-sm-0.col-md-5.offset-md-1.col-lg-4.offset-lg-2.text-xs-center(style='padding: 30px 0')
+          button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice1
+        .col-sm-6.col-md-5.col-lg-4.text-xs-center(style='padding: 30px 0')
+          button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice2
 
 block otherScripts
   script(src='/scripts/questionnaire.js')

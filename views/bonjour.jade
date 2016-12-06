@@ -22,67 +22,67 @@ block cont
         tr
           td
             if step1Result
-              #{step1Result}
+              span #{step1Result}
             else
-              À faire
+              span À faire
           td
             if step1Duration
-              #{step1Duration}
+              span #{step1Duration}
             else
-            |  --:--
+              span --:--
           td
             if step1Url
               a(href="#{step1Url}") Épreuve 1
             else
-              Épreuve 1
+              span Épreuve 1
         tr
           td
             if step2Result
-              #{step2Result}
+              span #{step2Result}
             else
-              À faire
+              span À faire
           td
             if step2Duration
-              #{step2Duration}
+              span #{step2Duration}
             else
-            |  --:--
+              span --:--
           td
             if step2Url
               a(href=step2Url) Épreuve 2
             else
-              Épreuve 2
+              span Épreuve 2
         tr
           td
             if step3Result
               #{step3Result}
             else
-              À faire
+              span À faire
           td
             if step3Duration
               #{step3Duration}
             else
-            |  --:--
+              span --:--
           td
             if step3Url
               a(href=step3Url) Épreuve 3
             else
-              Épreuve 3
+              span Épreuve 3
         tr
           td
             if step4Result
-              #{step4Result}
+              span #{step4Result}
             else
-              À faire
+              span À faire
           td
             if step4Duration
-              #{step4Duration}
+              span #{step4Duration}
             else
-            |  --:--
+              span --:--
           td
             if step4Url
               a(href=step4Url) Épreuve 4
             else
-              Épreuve 4
+              span Épreuve 4
 
     .launch-section
       p.text-xs-center
