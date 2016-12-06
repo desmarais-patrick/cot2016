@@ -1,88 +1,90 @@
 extends layout
 
 block head
-  .container-fluid.bonjour.bonjour-head
+  .container.bonjour.bonjour-head
     .row
-      .col-sm-6
+      .col-sm-6.offset-sm-0.col-md-5.offset-md-1.col-lg-3.offset-lg-3.text-xs-center
         p(style='margin-top: 1rem') Bienvenue au défi de l'équipe:
-      .col-sm-6.text-xs-center
+      .col-sm-6.col-md-4.col-lg-2.text-xs-center
         img.img-fluid.img-thumbnail(src='/resources/bubblesugar.jpg', style='height: 200px')
         p.lead bubblesugar
 
 block cont
-  .container-fluid.bonjour.bonjour-cont
+  .container.bonjour.bonjour-cont
     h2 Épreuves
-    .row
-      .col-sm-2
-        p.small.text-xs-center statut
-      .col-sm-2
-        p.small.text-xs-center durée
-      .col-sm-7
-        p.small.text-xs-left lien
-    .row.challenge
-      .col-sm-2
-        if step1Result
-          p.lead.text-xs-center #{step1Result}  
-        else
-          p.lead.text-xs-center À faire
-      .col-sm-2
-        if step1Duration
-          p.lead.text-xs-center #{step1Duration}  
-        else
-          p.lead.text-xs-center X
-      .col-sm-7
-        if step1Url
-          p.lead <a href=#{step1Url}>Épreuve 1</a>
-        else
-          p.lead Épreuve 1
-    .row.challenge
-      .col-sm-2
-        if step2Result
-          p.lead.text-xs-center #{step2Result}  
-        else
-          p.lead.text-xs-center À faire
-      .col-sm-2
-        if step2Duration
-          p.lead.text-xs-center #{step2Duration}  
-        else
-          p.lead.text-xs-center X
-      .col-sm-7
-        if step2Url
-          p.lead <a href=#{step2Url}>Épreuve 2</a>
-        else
-          p.lead Épreuve 2
-    .row.challenge
-      .col-sm-2
-        if step3Result
-          p.lead.text-xs-center #{step3Result}  
-        else
-          p.lead.text-xs-center À faire
-      .col-sm-2
-        if step3Duration
-          p.lead.text-xs-center #{step3Duration}  
-        else
-          p.lead.text-xs-center X
-      .col-sm-7
-        if step3Url
-          p.lead <a href=#{step3Url}>Épreuve 3</a>
-        else
-          p.lead Épreuve 3
-    .row.challenge
-      .col-sm-2
-        if step4Result
-          p.lead.text-xs-center #{step4Result}  
-        else
-          p.lead.text-xs-center À faire
-      .col-sm-2
-        if step4Duration
-          p.lead.text-xs-center #{step4Duration}  
-        else
-          p.lead.text-xs-center X
-      .col-sm-7
-        if step4Url
-          p.lead <a href=#{step3Url}>Épreuve 4</a>
-        else
-          p.lead Épreuve 4
+    table.table
+      thead
+        tr
+          th statut
+          th durée
+          th lien
+      tbody
+        tr
+          td
+            if step1Result
+              #{step1Result}
+            else
+              À faire
+          td
+            if step1Duration
+              #{step1Duration}
+            else
+            |  --:--
+          td
+            if step1Url
+              a(href="#{step1Url}") Épreuve 1
+            else
+              Épreuve 1
+        tr
+          td
+            if step2Result
+              #{step2Result}
+            else
+              À faire
+          td
+            if step2Duration
+              #{step2Duration}
+            else
+            |  --:--
+          td
+            if step2Url
+              a(href=step2Url) Épreuve 2
+            else
+              Épreuve 2
+        tr
+          td
+            if step3Result
+              #{step3Result}
+            else
+              À faire
+          td
+            if step3Duration
+              #{step3Duration}
+            else
+            |  --:--
+          td
+            if step3Url
+              a(href=step3Url) Épreuve 3
+            else
+              Épreuve 3
+        tr
+          td
+            if step4Result
+              #{step4Result}
+            else
+              À faire
+          td
+            if step4Duration
+              #{step4Duration}
+            else
+            |  --:--
+          td
+            if step4Url
+              a(href=step4Url) Épreuve 4
+            else
+              Épreuve 4
+
     .launch-section
       p.text-xs-center
-        a.btn.btn-secondary(href='/questionnaire') Commencer
+        unless step1Result
+          a.btn.btn-secondary(href='/questionnaire') Commencer
