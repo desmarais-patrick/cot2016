@@ -28,7 +28,8 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
   }
 
   if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 600000) { //TODO 10 minutes. voir si on met plus de temps
-    res.send('pu de temps pour faire le test. passer au suivant');
+    nextQuestion.url = '/';
+    res.send(nextQuestion);
     return;
   }
 
@@ -45,7 +46,9 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
   }
 
   if (nextQuestionId > questions.length) {
-    res.send('succes. redirect somewhere'); //TODO handler mieux la reponse
+    nextQuestion.url = '/';
+    res.send(nextQuestion);
+    return;
   } else {
     nextQuestion.question = questions[nextQuestionId].question;
     nextQuestion.choice1 = questions[nextQuestionId].choice1;
