@@ -30,7 +30,7 @@ global.routeur.get('/', function(req, res, next) {
      params.step4Url = '/intrus';
    }
 
-   if (req.cookies.intrusREsult) {
+   if (req.cookies.intrusResult) {
      //Todo add button print me
    }
 
