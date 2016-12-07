@@ -17,7 +17,17 @@ id,question,choice1,choice2,choice3,answer
 16,Quelle est la capitale de la Nouvelle-Galles du Sud ?,Sydney,Cardiff,,1
 17,Combien de personnes permanentes dans l'équipe Backend ?,6,5,7,1
 18,Jaques à décidé de s'attaquer à Fran. Combien de fois il doit répéter ?,32,45,21,2
-19,Qu'est-ce qu'on fait en 8 ?,Dance,Noeud,Gâteau,2
+19,Qu'est-ce qu'on fait en 8 ?,Danse,Noeud,Gâteau,2
 20,Combien de km dans un marathon ? ,21,42,10,2
 21,La station Champs-de-Mars est sur quelle ligne ?,Bleu,Orange,Jaune,2
 22,Combien il y a de lignes de métro à Montréal ?,5,4,6,2
+23,Cliquez sur Bleu,Bleu,Rouge,,1
+24,Cliquez sur Rouge,Bleu,Rouge,,2
+25,Cliquez sur Rouge,Bleu,Rouge,,2
+26,Cliquez sur Bleu,Rouge,Bleu,,2
+27,De quelle couleur n'est pas une banane pas mûre ?,Vert,Jaune,,2
+28,Combien il y a de personnes dans votre équipe de la chasse au trésor ?,5,4,,2
+29,Comment s'appelle le plombier rouge dans Super Mario Bros ?,Luigi,Mario,,2
+30,2 + 2 ?,3,4,,2
+31,Chien est masculin ou féminin ?,Masculin,Féminin,,1
+32,Est-ce que c'est la dernière question ?,oui,non,,1

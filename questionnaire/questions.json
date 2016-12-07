@@ -92,7 +92,7 @@
     "question": "Quelle est la circonférence d'un cercle ?",
     "choice1": "pi r^2",
     "choice2": "2pi R",
-    "choice3": "4pi R^3",
+    "choice3": "",
     "answer": 2
   },
   {
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "question": "Jaques a décidé de s'attaquer à Fran. Combien de fois il doit répéter ?",
+    "question": "Jaques à décidé de s'attaquer à Fran. Combien de fois il doit répéter ?",
     "choice1": 32,
     "choice2": 45,
     "choice3": 21,
@@ -146,7 +146,7 @@
   {
     "id": 19,
     "question": "Qu'est-ce qu'on fait en 8 ?",
-    "choice1": "Dance",
+    "choice1": "Danse",
     "choice2": "Noeud",
     "choice3": "Gâteau",
     "answer": 2
@@ -174,5 +174,85 @@
     "choice2": 4,
     "choice3": 6,
     "answer": 2
+  },
+  {
+    "id": 23,
+    "question": "Cliquez sur Bleu",
+    "choice1": "Bleu",
+    "choice2": "Rouge",
+    "choice3": "",
+    "answer": 1
+  },
+  {
+    "id": 24,
+    "question": "Cliquez sur Rouge",
+    "choice1": "Bleu",
+    "choice2": "Rouge",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 25,
+    "question": "Cliquez sur Rouge",
+    "choice1": "Bleu",
+    "choice2": "Rouge",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 26,
+    "question": "Cliquez sur Bleu",
+    "choice1": "Rouge",
+    "choice2": "Bleu",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 27,
+    "question": "De quelle couleur n'est pas une banane pas mûre ?",
+    "choice1": "Vert",
+    "choice2": "Jaune",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 28,
+    "question": "Combien il y a de personnes dans votre équipe de la chasse au trésor ?",
+    "choice1": 5,
+    "choice2": 4,
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 29,
+    "question": "Comment s'appelle le plombier rouge dans Super Mario Bros ?",
+    "choice1": "Luigi",
+    "choice2": "Mario",
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 30,
+    "question": "2 + 2 ?",
+    "choice1": 3,
+    "choice2": 4,
+    "choice3": "",
+    "answer": 2
+  },
+  {
+    "id": 31,
+    "question": "Chien est masculin ou féminin ?",
+    "choice1": "Masculin",
+    "choice2": "Féminin",
+    "choice3": "",
+    "answer": 1
+  },
+  {
+    "id": 32,
+    "question": "Est-ce que c'est la dernière question ?",
+    "choice1": "oui",
+    "choice2": "non",
+    "choice3": "",
+    "answer": 1
   }
 ]
