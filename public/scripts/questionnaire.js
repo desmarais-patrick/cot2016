@@ -35,40 +35,14 @@
 
   function updateQuizTimer() {
     var endTime = startTime.add(10, "m");
-    updateClock(QUIZ_TIME_SELECTOR, endTime, gameOver);
-  }
-
-  function updateClock(selector, referenceTime, callback) {
-    var clockElem = $(selector);
-    var now = moment();
-    var secondsLeft = 0;
-    var durationLeft;
-    var newText;
-
-    if (now.isBefore(referenceTime)) {
-      durationLeft = referenceTime.clone().subtract(now);
-      newText = durationLeft.format("m[m] s[s]");
-      secondsLeft = moment.duration(durationLeft).asSeconds();
-    } else {
-      newText = "0";
-    }
-    clockElem.text(newText);
-
-    if (0 < secondsLeft) {
-      // TODO Stop the previous clock before starting a new one!!!
-      setTimeout(function () {
-        updateClock(selector, referenceTime, callback)
-      }, 500);
-    } else {
-      callback();
-    }
+    app.utilities.startTimer(QUIZ_TIME_SELECTOR, "mm:ss", endTime, gameOver);
   }
 
   function updateQuestion(question, choice1, choice2) {
     $(QUESTION_TITLE_SELECTOR).text(question);
     $(QUESTION_CHOICE_1_SELECTOR).text(choice1);
     $(QUESTION_CHOICE_2_SELECTOR).text(choice2);
-    updateClock(QUESTION_TIME_SELECTOR, moment().add(5, 's'), getNextQuestion);
+    questionTimerID = app.utilities.startTimer(QUESTION_TIME_SELECTOR, "s", moment().add(5, 's'), getNextQuestion);
   }
 
   function gameOver() {
@@ -78,9 +52,11 @@
 
   function initializeAnswerTriggers() {
     $(QUESTION_CHOICE_1_SELECTOR).click(function () {
+      app.utilities.stopTimer(questionTimerID);
       getNextQuestion(1);
     });
     $(QUESTION_CHOICE_2_SELECTOR).click(function () {
+      app.utilities.stopTimer(questionTimerID);
       getNextQuestion(2);
     });
   }
@@ -95,4 +71,5 @@
   var QUIZ_TIME_SELECTOR = "#quizTime";
 
   var startTime;
+  var questionTimerID;
 })(moment);
