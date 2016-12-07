@@ -55,8 +55,11 @@
     clockElem.text(newText);
 
     if (0 < secondsLeft) {
+      if (previousTimeoutId) {
+        clearTimeout(previousTimeoutId);
+      }
       // TODO Stop the previous clock before starting a new one!!!
-      setTimeout(function () {
+      previousTimeoutId = setTimeout(function () {
         updateClock(selector, referenceTime, callback)
       }, 500);
     } else {
@@ -95,4 +98,5 @@
   var QUIZ_TIME_SELECTOR = "#quizTime";
 
   var startTime;
+  var previousTimeoutId;
 })(moment);

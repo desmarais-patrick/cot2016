@@ -43,7 +43,7 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
   if (req.cookies.currentQuestion) {
     var currentQuestion = parseInt(req.cookies.currentQuestion, 10);
 
-    if (new Date().getTime() - new Date(req.cookies.currentQuestionInitDate).getTime() > 5000 && !req.query.timeoutdisabled) { //pour debugger: ajoutez un query string timoutdisabled pour tester sans timeout
+    if (!req.query.answer || (new Date().getTime() - new Date(req.cookies.currentQuestionInitDate).getTime() > 5000 && !req.query.timeoutdisabled)) { //pour debugger: ajoutez un query string timoutdisabled pour tester sans timeout
       nextQuestion.previousTimeout = true;
     } else if (questions[currentQuestion].answer != req.query.answer) {
       nextQuestionId = currentQuestion + 1;
