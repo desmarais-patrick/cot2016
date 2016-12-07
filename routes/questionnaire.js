@@ -52,7 +52,7 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
     }
   }
 
-  if (nextQuestionId > questions.length) {
+  if (nextQuestionId >= questions.length) {
     var result = {};
     result.success = true;
     result.durationMillis = new Date().getTime() - new Date(req.cookies.initdate).getTime();
@@ -60,7 +60,6 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
 
     nextQuestion.url = '/';
     res.send(nextQuestion);
-    return;
   } else {
     nextQuestion.question = questions[nextQuestionId].question;
     nextQuestion.choice1 = questions[nextQuestionId].choice1;
