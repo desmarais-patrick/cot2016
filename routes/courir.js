@@ -12,13 +12,22 @@ global.routeur.get('/courir', function(req, res, next) {
   }
 });
 
-global.routeur.get('/courir/submit', function(req, res, next) {
-    if (req.query.answer_borne === '760' &&
-        req.query.answer_rbq === '8210-9299-08') {
-        res.redirect('/secret')
+global.routeur.post('/courir/submit', function(req, res, next) {
+    var data = {};
+    if (req.body.rep1 === '760' &&
+        req.body.rep2 === '8210-9299-08') {
+        data.success = true;
+        data.url = '/secret';
+
+        var result = {};
+        result.success = true;
+        result.durationMillis = new Date().getTime() - new Date(req.cookies.initdate_courir).getTime();
+        res.cookie('courirResult', result, { expires: new Date(253402300000000) })
     } else {
-        res.status(204).send();
+        data.success = false;
     }
+
+    res.send(data);
 });
 
 global.routeur.get('/courir/init', function(req, res, next) {
@@ -32,14 +41,18 @@ global.routeur.get('/courir/init', function(req, res, next) {
         data.startTime = req.cookies.initdate_courir;
     }
 
-    update(req, res, next);
-
-    data.url = '/';
+    if (!update(req, res, next)) {
+        data.url = '/';
+    }
     res.send(data);
 });
 
 global.routeur.get('/courir/update', function(req, res, next) {
-    update(req, res, next);
+    var data = {};
+    if (!update(req, res, next)) {
+        data.url = '/';
+    }
+    res.send(data);
 });
 
 function update(req, res, next) {
@@ -48,5 +61,8 @@ function update(req, res, next) {
         result.success = false;
         result.durationMillis = new Date().getTime() - new Date(req.cookies.initdate_courir).getTime();
         res.cookie('courirResult', result, { expires: new Date(253402300000000) })
+        return false;
     }
+
+    return true;
 }

@@ -24,7 +24,13 @@ global.routeur.get('/', function(req, res, next) {
 
    if (req.cookies.courirResult) {
      params.step2Result = req.cookies.courirResult.success ? 'Réussie' : 'Échouée';
-     params.step2Duration = millisToMinutesAndSeconds(req.cookies.courirResult.durationMillis);
+
+     if (req.cookies.courirResult.consolation) {
+        params.step2Result = params.step2Result + ' en consolation';
+        params.step2Duration = "N/A"
+     } else {
+         params.step2Duration = millisToMinutesAndSeconds(req.cookies.courirResult.durationMillis);
+     }
      params.step3Url = '/secret';
    }
 

@@ -42,7 +42,7 @@ block cont
                             img(class='courir-photo' src='/photos/photo_borne.png')
                     div
                         h2 Numéro de la borne?
-                        input(name='answer_borne' class='input courir-input courir-input-borne')
+                        input#courirRep1(name='answer_borne' class='input courir-input courir-input-borne')
                 .col-sm-2
                 .col-sm-5
                     h1 Course #2
@@ -51,9 +51,9 @@ block cont
                             img(class='courir-photo' src='/photos/photo_rbq.png')
                     div
                         h2 Numéro de la régie du bâtiment du Québec??
-                        input(name='answer_rbq' class='input courir-input courir-input-rbq')
+                        input#courirRep2(name='answer_rbq' class='input courir-input courir-input-rbq')
 
-            button.btn.btn-secondary.btn-lg(type='submit') Soumettre
+            button.btn.btn-secondary.btn-lg#btnSubmit Soumettre
 
 block otherScripts
     script(src='/scripts/courir.js')
