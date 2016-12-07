@@ -45,7 +45,18 @@
   }
 
   function brieflyShowPreviousTimeoutMessage() {
+    brieflyShowMessage("#previousTimeoutMessage");
+  }
 
+  function brieflyShowPreviousErrorMessage() {
+    brieflyShowMessage("#previousErrorMessage");
+  }
+
+  function brieflyShowMessage(selector) {
+    $(selector).css("visibility", "visible");
+    setTimeout(function () {
+      $(selector).css("visibility", "hidden");
+    }, 3000)
   }
 
   function updateQuestion(question, choice1, choice2) {
