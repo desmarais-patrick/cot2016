@@ -33,6 +33,11 @@ block cont
 
     .container-fluid#questionSection(style='display:none')
       .row
+        .col-sm-6
+          p#previousTimeoutMessage(style="visibility: hidden") La délai de la dernière question a été dépassé.
+        .col-sm-6
+          p#previousErrorMessage(style="visibility: hidden") La délai de la dernière question a été dépassé.
+      .row
         .col-sm-10
           p(style='margin-bottom: .5rem') Question #1:
           h3

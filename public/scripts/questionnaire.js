@@ -28,6 +28,12 @@
             startTime = moment(data.startTime);
             updateQuizTimer();
           }
+          if (data.previousTimeout) {
+            brieflyShowPreviousTimeoutMessage();
+          }
+          if (data.previousError) {
+            brieflyShowPreviousErrorMessage();
+          }
           updateQuestion(data.question, data.choice1, data.choice2);
         }
       });
@@ -36,6 +42,10 @@
   function updateQuizTimer() {
     var endTime = startTime.add(10, "m");
     app.utilities.startTimer(QUIZ_TIME_SELECTOR, "mm:ss", endTime, gameOver);
+  }
+
+  function brieflyShowPreviousTimeoutMessage() {
+
   }
 
   function updateQuestion(question, choice1, choice2) {
