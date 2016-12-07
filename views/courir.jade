@@ -1,21 +1,39 @@
 extends layout
 
 block head
-    h1(class="header-title") La course, c'est bon pour la santé ! 
+    .container-fluid.challenge-head.questionnaire
+        .row
+            .col-sm-10
+                p(style='margin-bottom: .5rem') Épreuve 2:
+                h2
+                    span.mark Course contre la montre
+            .col-sm-2
+                p.lead.text-xs-center(style='margin-top: 2rem')
+                    span#runTime 10m 00s
 
 block cont
-  .container-fluid
-    .row
-        h2 Remplissez le formulaire suivant avec les bonnes réponses.
-    .row
-        h3 Vous pouvez essayer autant de réponses que vous le voulez.
-    .row
-        h3 Vous avez cinq (5) minutes!
-    .row
-        h4(class='subtle') ps. Attention dehors, ça glisse.
-    hr
-    form(action='/courir/submit')
-        fieldset.form-group
+    .challenge-body.questionnaire
+        .container-fluid#introSection
+            .row
+                .col-sm-8
+                    p Bravo! Voici la deuxième épreuve de votre défi.
+                    ul
+                        li
+                            p Remplissez le formulaire avec les bonnes réponses.
+                        li
+                            p Vous pouvez essayer autant de réponses que vous le voulez.
+                        li
+                            p Vous avez dix (10) minutes!
+                        li
+                            p ps. Mettez vos bottes et vos manteaux avant de commencer ;)
+                        li
+                            p ps. Attention! Dehors, ça glisse.
+            br
+            br
+            p.text-xs-center
+                button.btn.btn-secondary#courirStartTrigger Commencer cette épreuve
+
+        .container-fluid#courirSection(style='display:none')
             .row
                 .col-sm-5
                     h1 Course #1

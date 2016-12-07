@@ -22,7 +22,9 @@ global.routeur.get('/', function(req, res, next) {
     params.step2Url = '/courir';
   }
 
-   if (req.cookies.courrirResult) {
+   if (req.cookies.courirResult) {
+     params.step2Result = req.cookies.courirResult.success ? 'Réussie' : 'Échouée';
+     params.step2Duration = millisToMinutesAndSeconds(req.cookies.courirResult.durationMillis);
      params.step3Url = '/secret';
    }
 

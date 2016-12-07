@@ -13,7 +13,7 @@ var bonjour = require('./routes/bonjour');
 var questionnaire = require('./routes/questionnaire');
 var secret = require('./routes/secret');
 var courir = require('./routes/courir');
-var intrus = require('./routes/maths');
+var maths = require('./routes/maths');
 var intrus = require('./routes/intrus');
 
 var app = express();
