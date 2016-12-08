@@ -1,7 +1,7 @@
 extends layout
 
 block head
-  .container-fluid.challenge-head.questionnaire
+  .container.challenge-head.questionnaire
     .row
       .col-sm-10
         p(style='margin-bottom: .5rem') Épreuve 1:
@@ -9,17 +9,17 @@ block head
           span.mark Questionnaire débilitant
       .col-sm-2
         p.lead.text-xs-center(style='margin-top: 2rem')
-          span#quizTime 10m 00s
+          span#quizTime --m --s
 
 block cont
   .challenge-body.questionnaire
-    .container-fluid#introSection
+    .container#introSection
       .row
         .col-sm-8
           p Voici la première épreuve de votre défi.
           ul
             li
-              p Le questionnaire comporte un temps total. Le temps commencera à s'écouler aussitôt que vous sera présenté la première question.
+              p Le questionnaire comporte un temps total de 10 minutes. Le temps commencera à s'écouler aussitôt que vous serez présenter la première question.
             li
               p Chaque question comporte un temps de réponse. Si le temps s'écoule, vous serez redirigé à la première question.
             li
@@ -31,7 +31,7 @@ block cont
       p.text-xs-center
         button.btn.btn-secondary#questionStartTrigger Commencer cette épreuve
 
-    .container-fluid#questionSection(style='display:none')
+    .container#questionSection(style='display:none')
       .row
         .col-sm-6
           p#previousTimeoutMessage.alert.alert-danger(style="visibility: hidden") La délai de la dernière question a été dépassé.
@@ -39,19 +39,20 @@ block cont
           p#previousErrorMessage.alert.alert-danger(style="visibility: hidden") Vous n'avez pas entré la réponse attendue.
       .row
         .col-sm-10
-          p(style='margin-bottom: .5rem') Question #1:
-          h3
-            span#questionTitle Quelle est la couleur de la banane?
+          .row
+            .col-sm-12
+              p(style='margin-bottom: .5rem') Question #1:
+                h3
+                  span#questionTitle
+            .col-sm-6.offset-sm-0.col-md-5.offset-md-1.col-lg-4.offset-lg-2.text-xs-right(style='padding-top: 30px; padding-bottom: 30px')
+              button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice1
+            .col-sm-6.col-md-5.col-lg-4.text-xs-left(style='padding-top: 30px; padding-bottom: 30px')
+              button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice2
         .col-sm-2
           p.lead.mark.text-xs-center(style='margin-top: 2rem')
-            span#questionTime 5
+            span#questionTime(style='font-size: 56px') 5
             br
             small sec
-      .row
-        .col-sm-6.offset-sm-0.col-md-5.offset-md-1.col-lg-4.offset-lg-2.text-xs-right(style='padding: 30px 0')
-          button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice1
-        .col-sm-6.col-md-5.col-lg-4.text-xs-left(style='padding: 30px 0')
-          button.btn.btn-secondary.mx-auto(style='width: 200px')#questionChoice2
 
 block otherScripts
   script(src='/scripts/questionnaire.js')
