@@ -1,46 +1,50 @@
-var questions = require('../secret/questions.json');
-
 global.donnees.secret = {};
-global.donnees.secret.questions = questions;
+
+var donnees = global.donnees.secret;
+donnees.chansons = require('../secret/chansons.json'); 
+donnees.idx_tentative = 0;
+  
+donnees.chiffrement = function() {
+	var cle_vigenere = "";
+	switch (donnees.idx_tentative) {
+	case 0:
+		donnees.chansons.forEach( function(chanson) {
+			cle_vigenere = cle_vigenere + chanson.cle_1;
+			chanson.texte = chanson.extrait_1;
+		});
+		break;
+	case 1:
+		donnees.chansons.forEach( function(chanson) {
+			cle_vigenere = cle_vigenere + chanson.cle_2;
+			chanson.texte = chanson.extrait_2;		
+		});
+		break;
+	case 2:
+		donnees.chansons.forEach( function(chanson) {
+			cle_vigenere = cle_vigenere + chanson.cle_3;
+			chanson.texte = chanson.extrait_3;
+		});
+		break;		
+	}
+	donnees.cle_vigenere = cle_vigenere;
+	console.log(donnees.cle_vigenere);
+}
 
 global.routeur.get('/secret', function(req, res, next) {
-  res.render('secret', { title: 'Déchiffre-moi ça !' });
+  donnees.chiffrement();
+  res.render('secret', { title: 'Déchiffre-moi ça !' }); 
 });
 
-global.routeur.get('/secret/nextQuestion', function(req, res, next) {
-  var nextQuestion = {};
-  var nextQuestionId = 0;
-
-  if (!req.cookies.initdate) {
-    res.cookie('initdate', new Date(), { expires: new Date(253402300000000) })
-  }
-
-  if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 600000) { //TODO 5 minutes. voir si on met plus de temps
-    res.send('pu de temps pour faire le test. passer au suivant');
-    return; 
-  }
-
-  if (req.cookies.currentQuestion) {
-    var currentQuestion = parseInt(req.cookies.currentQuestion, 10);
-
-    if (new Date().getTime() - new Date(req.cookies.currentQuestionInitDate).getTime() > 5000 && !req.query.timeoutdisabled) { //pour debugger: ajoutez un query string timoutdisabled pour tester sans timeout
-      nextQuestion.previousTimeout = true;
-    } else if (questions[currentQuestion].answer != req.query.answer) {
-      nextQuestionId = currentQuestion + 1;
+global.routeur.get('/secret/submit', function(req, res, next) {
+    if (req.query.cle_vigenere === global.donnees.secret.cle_vigenere) {
+        res.redirect('/secret/bravo')
     } else {
-      nextQuestion.previousError = true;
+    	if (donnees.idx_tentative < 2) {
+    		donnees.idx_tentative++;
+    		donnee.chiffrement();
+    	} else {
+    		donnees.idx_tentative = 0;
+    	}
+        res.status(204).send();
     }
-  }
-
-  
-  if (nextQuestionId > questions.length) {
-    res.send('succes. redirect somewhere'); //TODO handler mieux la reponse
-  } else {
-    nextQuestion.question = questions[nextQuestionId].question;
-    nextQuestion.choice1 = questions[nextQuestionId].choice1;
-    nextQuestion.choice2 = questions[nextQuestionId].choice2; 
-    res.cookie('currentQuestion', nextQuestionId, { expires: new Date(253402300000000) })
-    res.cookie('currentQuestionInitDate', new Date(), { expires: new Date(253402300000000) })
-    res.send(nextQuestion)
-  }
 });
