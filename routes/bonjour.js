@@ -22,11 +22,14 @@ global.routeur.get('/', function(req, res, next) {
     params.step2Url = '/courir';
   }
 
-   if (req.cookies.courrirResult) {
+   if (req.cookies.courrirResult) {	 
      params.step3Url = '/secret';
    }
 
-   if (req.cookies.secretResult) {
+   if (global.donnees.secret.succes) {
+	 params.step3Url = '/secret/disparu';
+	 params.step3Result = global.donnees.secret.succes ? 'Réussie' : 'Échouée';
+     params.step3Duration = millisToMinutesAndSeconds(global.donnees.secret.dureeMillis);
      params.step4Url = '/intrus';
    }
 
