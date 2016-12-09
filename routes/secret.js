@@ -2,49 +2,59 @@ global.donnees.secret = {};
 
 var donnees = global.donnees.secret;
 donnees.chansons = require('../secret/chansons.json'); 
-donnees.idx_tentative = 0;
+donnees.idx_extraits = new Array(donnees.chansons.length); 
   
-donnees.chiffrement = function() {
-	var cle_vigenere = "";
-	switch (donnees.idx_tentative) {
-	case 0:
-		donnees.chansons.forEach( function(chanson) {
-			cle_vigenere = cle_vigenere + chanson.cle_1;
-			chanson.texte = chanson.extrait_1;
-		});
-		break;
-	case 1:
-		donnees.chansons.forEach( function(chanson) {
-			cle_vigenere = cle_vigenere + chanson.cle_2;
-			chanson.texte = chanson.extrait_2;		
-		});
-		break;
-	case 2:
-		donnees.chansons.forEach( function(chanson) {
-			cle_vigenere = cle_vigenere + chanson.cle_3;
-			chanson.texte = chanson.extrait_3;
-		});
-		break;		
+donnees.brassage = function() {
+	var cle = "", chanson = {};
+	var nombre = (Math.random() * 1000000000).toString();
+	for (var i = 0; i < donnees.idx_extraits.length; i++) {		
+		donnees.idx_extraits[i] = ((parseInt(nombre.charAt(i)) + 1) % 3) + 1;
 	}
-	donnees.cle_vigenere = cle_vigenere;
-	console.log(donnees.cle_vigenere);
+	for (var i = 0; i < donnees.chansons.length; i++) {
+		chanson =  donnees.chansons[i];		
+		switch (donnees.idx_extraits[i]) {
+		case 1:			
+			cle = cle + chanson.cle_1;
+			chanson.texte = chanson.extrait_1;
+			break;
+		case 2:
+			cle = cle + chanson.cle_2;
+			chanson.texte = chanson.extrait_2;		
+			break;
+		case 3:
+			cle = cle + chanson.cle_3;
+			chanson.texte = chanson.extrait_3;
+			break;		
+		}
+	}
+	donnees.cle = cle;
+	console.log("Séquence générée : " + donnees.idx_extraits.toString());
+	console.log("Clé générée : " + donnees.cle);
 }
 
 global.routeur.get('/secret', function(req, res, next) {
-  donnees.chiffrement();
+  if (!global.donnees.secret.debut) {
+	global.donnees.secret.debut = new Date();  
+  }    
+  donnees.brassage();
   res.render('secret', { title: 'Déchiffre-moi ça !' }); 
 });
 
-global.routeur.get('/secret/submit', function(req, res, next) {
-    if (req.query.cle_vigenere === global.donnees.secret.cle_vigenere) {
-        res.redirect('/secret/bravo')
-    } else {
-    	if (donnees.idx_tentative < 2) {
-    		donnees.idx_tentative++;
-    		donnee.chiffrement();
-    	} else {
-    		donnees.idx_tentative = 0;
-    	}
-        res.status(204).send();
+global.routeur.get('/secret/disparu', function(req, res, next) {
+	res.render('secretdisparu', { title: 'Ho non !' });
+});
+
+global.routeur.get('/secret/decode', function(req, res, next) {
+    if (req.query.cle === global.donnees.secret.cle 
+    		&& req.query.auteur_0 === global.donnees.secret.chansons[0].auteur
+    		&& req.query.auteur_1 === global.donnees.secret.chansons[1].auteur
+    		&& req.query.auteur_2 === global.donnees.secret.chansons[2].auteur
+    		&& req.query.auteur_3 === global.donnees.secret.chansons[3].auteur
+    		&& req.query.auteur_4 === global.donnees.secret.chansons[4].auteur) {    
+    	global.donnees.secret.succes = true;
+    	global.donnees.secret.dureeMillis = new Date().getTime() - global.donnees.secret.debut.getTime();
+        res.redirect('/intrus');
+    } else {    	
+    	res.redirect('/secret');
     }
 });

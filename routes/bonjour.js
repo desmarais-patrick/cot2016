@@ -38,11 +38,12 @@ global.routeur.get('/', function(req, res, next) {
      params.step3Url = '/secret';
    }
 
-  if (req.cookies.secretResult) {
-    if(!req.cookies.intrusResult) {
-      params.step4Url = '/intrus';
-    }
-  }
+   if (global.donnees.secret.succes) {
+	 params.step3Url = '/secret/disparu';
+	 params.step3Result = global.donnees.secret.succes ? 'Réussie' : 'Échouée';
+     params.step3Duration = millisToMinutesAndSeconds(global.donnees.secret.dureeMillis);
+     params.step4Url = '/intrus';
+   }
 
   if (req.cookies.intrusResult) {
     var intrusResult = JSON.parse(req.cookies.intrusResult);
