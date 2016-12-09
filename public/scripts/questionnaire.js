@@ -38,7 +38,7 @@
   }
 
   function updateQuizTimer() {
-    var endTime = startTime.add(10, "m");
+    var endTime = startTime.add(15, "m");
     app.utilities.startTimer(QUIZ_TIME_SELECTOR, "mm:ss", endTime, gameOver);
   }
 

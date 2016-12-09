@@ -29,7 +29,7 @@ global.routeur.get('/questionnaire/nextQuestion', function(req, res, next) {
     nextQuestion.startTime = req.cookies.initdate;
   }
 
-  if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 600000) { //TODO 10 minutes. voir si on met plus de temps
+  if (req.cookies.initdate && new Date().getTime() - new Date(req.cookies.initdate).getTime() > 900000) { //TODO 15 minutes. voir si on met plus de temps
     var result = {};
     result.success = false;
     result.durationMillis = new Date().getTime() - new Date(req.cookies.initdate).getTime();
