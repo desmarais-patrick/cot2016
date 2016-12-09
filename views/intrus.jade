@@ -1,16 +1,31 @@
 extends layout
 
 block head
-    h1(class="header-title") Trouvez l'intrus !
+    h1(class="header-title") Trouver la chanson
 block cont
- 
+    br
+    br
+    h3 <b>Attention!!</b> il est important de suivre ces étapes en ordre, pour que la bonne réponse apparaîse.
+    br
     ul
-        each q in global.donnees.intrus.questions            
-            h2= q.question
-                h3= q.choice1
-                h3= q.choice2
-                h3= q.choice3
-                h3= q.choice4                
+        li Prendre l'app Stingray Musique Mobile en Dev
+        li Créez vous un compte avec sur l'opérateur 1 avec login: partydenoelstingray@perenoelnoel.com password: 234?*(ui"Zii
+        li Loggez vous sur le Web Player en Dev
+        li Prendre un autre téléphone
+        li Prendre l'app Stingray Musique Mobile en Stage
+        li Créez vous un compte avec sur l'opérateur 1 avec login: partydenoelstingray@perenoelnoel.com password: 123456789$s"
+        li Loggez vous sur le Web Player en Stage
+        li Faites log out du Web Player en Dev
+        li Reprendre le premier téléphone
+        li Prendre l'app Stingray Musique Mobile en Test
+        li Créez vous un compte avec sur Telus avec login: partydenoelstingray@perenoelnoel.com password: iuY65TTT*r$3)
+        li Loggez vous sur le Web Player en Test
+        li Loggez vous sur votre compte de stage dans l'API Tester
+        li Répondez à la question suivante: Quelle chanson joue présentement chez l'opérateur 1 en dev dans le WebPlayer sur la chaîne 002 ?
+        
+        br
+        input(name='response' class='input') 
+        button.btn.btn-secondary#submitResponse Soumettre
 
-//    div(class="p1-question") question
-//    div(class="p1-response") réponse
+block otherScripts
+  script(src='/scripts/intrus.js')

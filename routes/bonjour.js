@@ -39,7 +39,9 @@ global.routeur.get('/', function(req, res, next) {
   }
 
   if (req.cookies.intrusResult) {
-   //Todo add button print me
+    var intrusResult = JSON.parse(req.cookies.intrusResult);
+    params.step4Result = intrusResult.success ? 'Réussie' : 'Échouée';
+    params.step4Duration = millisToMinutesAndSeconds(intrusResult.durationMillis);
   }
 
   res.render('bonjour', params);
