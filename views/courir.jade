@@ -9,7 +9,7 @@ block head
                     span.mark Course contre la montre
             .col-sm-2
                 p.lead.text-xs-center(style='margin-top: 2rem')
-                    span#runTime 10m 00s
+                    span#runTime --m --s
 
 block cont
     .challenge-body.questionnaire
@@ -23,7 +23,7 @@ block cont
                         li
                             p Vous pouvez essayer autant de réponses que vous le voulez.
                         li
-                            p Vous avez dix (10) minutes!
+                            p Vous avez quinze (15) minutes!
                         li
                             p ps. Mettez vos bottes et vos manteaux avant de commencer ;)
                         li
@@ -52,6 +52,25 @@ block cont
                     div
                         h2 Numéro de la régie du bâtiment du Québec??
                         input#courirRep2(name='answer_rbq' class='input courir-input courir-input-rbq')
+            .row
+                .col-sm-5
+                    h1 Course #3
+                    div
+                        a(href='/photos/tension.jpg' target='_blank')
+                            img(class='courir-photo' src='photos/tension.jpg')
+                    div
+                        h2 Installation sous tension! Numéro de code Hydro-Québec?
+                        input#courirRep3(name='answer_tension' class='input courir-input courir-input-tension')
+                .col-sm-2
+                .col-sm-5
+                    h1 Course #4
+                    div
+                        a(href='/photos/escalier.jpg' target='_blank')
+                            img(class='courir-escalier' src='/photos/escalier.jpg')
+                    div
+                        h2 Combien de marches montées au total?
+                        input#courirRep4(name='answer_escalier' class='input courir-input courir-input-excalier')
+
 
             button.btn.btn-secondary.btn-lg#btnSubmit Soumettre
 

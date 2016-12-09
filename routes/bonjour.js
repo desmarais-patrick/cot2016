@@ -25,7 +25,7 @@ global.routeur.get('/', function(req, res, next) {
       params.step2Url = '/courir';
     }
   }
-    
+
    if (req.cookies.courirResult) {
      params.step2Result = req.cookies.courirResult.success ? 'Réussie' : 'Échouée';
 

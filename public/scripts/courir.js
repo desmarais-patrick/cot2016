@@ -6,52 +6,57 @@
     function initialize() {
         var url = "/courir/init";
 
-        $.ajax(url)
-            .done(function(data) {
+        $("#courirStartTrigger").click(function () {
+            $("#introSection").hide();
+            $("#courirSection").show();
 
-                if (data.url) {
-                    window.location = data.url;
-                }
+            $.ajax(url)
+                .done(function(data) {
 
-                $("#courirStartTrigger").click(function () {
-                    $("#introSection").hide();
-                    $("#courirSection").show();
+                    if (data.url) {
+                        window.location = data.url;
+                    }
 
                     startTime = moment(data.startTime);
-                    var endTime = startTime.add(10, "m");
+                    var endTime = startTime.add(15, "m");
                     app.utilities.startTimer($("#runTime"), "mm:ss", endTime, gameOver);
                 });
 
-                $("#btnSubmit").click(function () {
-
-                    var reponse1 = $('#courirRep1').val();
-                    var reponse2 = $('#courirRep2').val();
+        });
 
 
-                    $.post("/courir/submit", { rep1: reponse1, rep2: reponse2})
-                        .done(function(data) {
+        $("#btnSubmit").click(function () {
 
-                            if (!data.success) {
-                                alert('Erreur!!!');
-                            }
-                            if (data.url) {
-                                window.location = data.url;
-                            }
-                        });
+            var reponse1 = $('#courirRep1').val();
+            var reponse2 = $('#courirRep2').val();
+            var reponse3 = $('#courirRep3').val();
+            var reponse4 = $('#courirRep4').val();
 
+
+            $.post("/courir/submit", { rep1: reponse1, rep2: reponse2, rep3: reponse3, rep4: reponse4})
+                .done(function(data) {
+
+                    if (!data.success) {
+                        alert(data.reason);
+                    }
+                    if (data.url) {
+                        window.location = data.url;
+                    }
                 });
 
+        });
 
-            });
+
 
     }
 
     function gameOver() {
-        $.ajax("/courir/update", function(data) {
-            if (data.url) {
-                window.location = data.url;
-            }
-        });
+        $.ajax("/courir/update")
+            .done(function(data) {
+                if (data.url) {
+                    window.location = data.url;
+                }
+            });
      }
 
 
