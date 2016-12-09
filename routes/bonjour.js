@@ -22,20 +22,20 @@ global.routeur.get('/', function(req, res, next) {
     params.step2Url = '/courir';
   }
 
-   if (req.cookies.courrirResult) {
-     params.step3Url = '/secret';
-   }
+  if (req.cookies.courrirResult) {
+   params.step3Url = '/secret';
+  }
 
-   if (req.cookies.secretResult) {
-     params.step4Url = '/intrus';
-   }
+  if (req.cookies.secretResult) {
+   params.step4Url = '/intrus';
+  }
 
-   if (req.cookies.intrusResult) {
-     //Todo add button print me
-   }
+  if (req.cookies.intrusResult) {
+   //Todo add button print me
+  }
 
   res.render('bonjour', params);
   if (!donnees.time_set) {
-	  donnees.init_time = new Date();  
+	  donnees.init_time = new Date();
   }
 });

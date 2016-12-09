@@ -3,9 +3,8 @@ extends layout
 block head
   .container.bonjour.bonjour-head
     .row
-      .col-sm-6.offset-sm-0.col-md-5.offset-md-1.col-lg-3.offset-lg-3.text-xs-center
+      .col-sm-6.offset-sm-3.text-xs-center
         p(style='margin-top: 1rem') Bienvenue au défi de l'équipe:
-      .col-sm-6.col-md-4.col-lg-2.text-xs-center
         img.img-fluid.img-thumbnail(src='/resources/bubblesugar.jpg', style='height: 200px')
         p.lead bubblesugar
 
@@ -54,9 +53,8 @@ block cont
         tr
           td
             if step3Result
-              #{step3Result}
+              span #{step3Result}
             else
-              À faire
               span À faire
           td
             if step3Duration
@@ -78,6 +76,7 @@ block cont
             if step4Duration
               span #{step4Duration}
             else
+              span --:--
           td
             if step4Url
               a(href=step4Url) Épreuve 4
@@ -85,6 +84,13 @@ block cont
               span Épreuve 4
 
     .launch-section
-      p.text-xs-center
-        unless step1Result
+      unless step1Result
+        p.text-xs-center
           a.btn.btn-secondary(href='/questionnaire') Commencer
+      if step4Result
+        .row
+          .col-sm-8.offset-sm-2.alert.alert-success.text-xs-center
+            h3 Félicitations
+            p.lead Vous avez complété toutes les épreuves !!!
+            p Imprimez cette page comme preuve que vous avez terminé cette chasse au trésor.
+            button.btn.btn-success(onclick='window.print()') Imprimer
