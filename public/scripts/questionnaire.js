@@ -59,8 +59,18 @@
 
   function updateQuestion(question, choice1, choice2) {
     $(QUESTION_TITLE_SELECTOR).text(question);
-    $(QUESTION_CHOICE_1_SELECTOR).text(choice1);
-    $(QUESTION_CHOICE_2_SELECTOR).text(choice2);
+
+    var random = 1 === Math.floor(Math.random() * 2);
+    questionChoiceLeft = {
+      text: random ? choice1 : choice2,
+      answer: random ? 1 : 2
+    };
+    questionChoiceRight = {
+      text: random ? choice2 : choice1,
+      answer: random ? 2 : 1
+    };
+    $(QUESTION_CHOICE_LEFT_SELECTOR).text(questionChoiceLeft.text);
+    $(QUESTION_CHOICE_RIGHT_SELECTOR).text(questionChoiceRight.text);
     questionTimerID = app.utilities.startTimer(QUESTION_TIME_SELECTOR, "s", moment().add(5, 's'), getNextQuestion);
   }
 
@@ -70,25 +80,29 @@
   }
 
   function initializeAnswerTriggers() {
-    $(QUESTION_CHOICE_1_SELECTOR).click(function () {
+    $(QUESTION_CHOICE_LEFT_SELECTOR).click(function () {
       app.utilities.stopTimer(questionTimerID);
-      getNextQuestion(1);
+      getNextQuestion(questionChoiceLeft.answer);
+      $(QUESTION_CHOICE_LEFT_SELECTOR).blur();
     });
-    $(QUESTION_CHOICE_2_SELECTOR).click(function () {
+    $(QUESTION_CHOICE_RIGHT_SELECTOR).click(function () {
       app.utilities.stopTimer(questionTimerID);
-      getNextQuestion(2);
+      getNextQuestion(questionChoiceRight.answer);
+      $(QUESTION_CHOICE_RIGHT_SELECTOR).blur();
     });
   }
 
   var INTRO_SECTION_SELECTOR = "#introSection";
-  var QUESTION_CHOICE_1_SELECTOR = "#questionChoice1";
-  var QUESTION_CHOICE_2_SELECTOR = "#questionChoice2";
+  var QUESTION_CHOICE_LEFT_SELECTOR = "#questionChoiceLeft";
+  var QUESTION_CHOICE_RIGHT_SELECTOR = "#questionChoiceRight";
   var QUESTION_SECTION_SELECTOR = "#questionSection";
   var QUESTION_START_TRIGGER_SELECTOR = "#questionStartTrigger";
   var QUESTION_TIME_SELECTOR = "#questionTime";
   var QUESTION_TITLE_SELECTOR = "#questionTitle";
   var QUIZ_TIME_SELECTOR = "#quizTime";
 
+  var questionChoiceLeft;
+  var questionChoiceRight;
   var startTime;
   var questionTimerID;
 })(moment);
