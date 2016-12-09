@@ -43,11 +43,11 @@
   }
 
   function brieflyShowPreviousTimeoutMessage() {
-    brieflyShowMessage("#previousTimeoutMessage");
+    brieflyShowMessage(PREVIOUS_TIMEOUT_MESSAGE_SELECTOR);
   }
 
   function brieflyShowPreviousErrorMessage() {
-    brieflyShowMessage("#previousErrorMessage");
+    brieflyShowMessage(PREVIOUS_ERROR_MESSAGE_SELECTOR);
   }
 
   function brieflyShowMessage(selector) {
@@ -93,6 +93,8 @@
   }
 
   var INTRO_SECTION_SELECTOR = "#introSection";
+  var PREVIOUS_ERROR_MESSAGE_SELECTOR = "#previousErrorMessage";
+  var PREVIOUS_TIMEOUT_MESSAGE_SELECTOR = "#previousTimeoutMessage";
   var QUESTION_CHOICE_LEFT_SELECTOR = "#questionChoiceLeft";
   var QUESTION_CHOICE_RIGHT_SELECTOR = "#questionChoiceRight";
   var QUESTION_SECTION_SELECTOR = "#questionSection";
