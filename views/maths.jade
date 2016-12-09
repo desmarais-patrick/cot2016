@@ -1,18 +1,42 @@
 extends layout
 
 block head
-    h1(class="header-title") Tu sais pas courir, peut-être que tu sais calculer.
+    .container-fluid.challenge-head.questionnaire
+        .row
+            .col-sm-12
+                h2
+                    span.mark Épreuve mathématique de consolation
 
 block cont
-    hr
-    form(action='/maths/submit')
-        fieldset.form-group
+    .challenge-body.questionnaire
+        .container-fluid#introSection
             .row
-                img(src='/photos/maths.png')
+                .col-sm-8
+                    p Bouh! Vous avez raté la course contre la montre.
+                    ul
+                        li
+                            p Vous savez pas courir, mais peut-être que vous savez calculer.
+                        li
+                            p SVP, Veuillez donner une réponse arrondie à 100 position décimales
+
+            br
+            br
+            p.text-xs-center
+                button.btn.btn-secondary#mathsStartTrigger Commencer cette épreuve
+
+        .container-fluid#mathsSection(style='display:none')
             .row
-                input(name='answer_maths')
+                .col-sm-12
+                    img(src='/photos/maths.png' style='width:400px')
             .row
-                button.btn.btn-secondary.btn-lg(type='submit') Soumettre
+                .col-sm-3
+                .col-sm-6
+                    input(style='width:600px')#answer
+                .col-sm-3
+                    button.btn.btn-secondary.btn-lg#btnSubmit Soumettre
+
+
+
 
 block otherScripts
     script(src='/scripts/maths.js')
