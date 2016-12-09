@@ -15,13 +15,17 @@ global.routeur.get('/', function(req, res, next) {
   var params = {};
   params.title = 'Que la chasse commence !';
 
-  params.step1Url = '/questionnaire';
+  if(!req.cookies.questionnaireResult) {
+    params.step1Url = '/questionnaire';
+  }
   if (req.cookies.questionnaireResult) {
     params.step1Result = req.cookies.questionnaireResult.success ? 'Réussie' : 'Échouée';
     params.step1Duration = millisToMinutesAndSeconds(req.cookies.questionnaireResult.durationMillis);
-    params.step2Url = '/courir';
+    if(!req.cookies.courrirResult) {
+      params.step2Url = '/courir';
+    }
   }
-
+    
    if (req.cookies.courirResult) {
      params.step2Result = req.cookies.courirResult.success ? 'Réussie' : 'Échouée';
 
@@ -34,16 +38,20 @@ global.routeur.get('/', function(req, res, next) {
      params.step3Url = '/secret';
    }
 
-   if (req.cookies.secretResult) {
-     params.step4Url = '/intrus';
-   }
+  if (req.cookies.secretResult) {
+    if(!req.cookies.intrusResult) {
+      params.step4Url = '/intrus';
+    }
+  }
 
-   if (req.cookies.intrusResult) {
-     //Todo add button print me
-   }
+  if (req.cookies.intrusResult) {
+    var intrusResult = JSON.parse(req.cookies.intrusResult);
+    params.step4Result = intrusResult.success ? 'Réussie' : 'Échouée';
+    params.step4Duration = millisToMinutesAndSeconds(intrusResult.durationMillis);
+  }
 
   res.render('bonjour', params);
   if (!donnees.time_set) {
-	  donnees.init_time = new Date();  
+	  donnees.init_time = new Date();
   }
 });

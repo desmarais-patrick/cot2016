@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfce5a40-662c-4df4-b144-415191a128bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/maths.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/photos/maths.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/courir.js" afterPath="$PROJECT_DIR$/public/scripts/courir.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/intrus.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/secret.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/secret/chansons.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/secret/questions.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/questionnaire.js" afterPath="$PROJECT_DIR$/public/scripts/questionnaire.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/bonjour.js" afterPath="$PROJECT_DIR$/routes/bonjour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/courir.js" afterPath="$PROJECT_DIR$/routes/courir.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/maths.js" afterPath="$PROJECT_DIR$/routes/maths.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/courir.jade" afterPath="$PROJECT_DIR$/views/courir.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/maths.jade" afterPath="$PROJECT_DIR$/views/maths.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/intrus.js" afterPath="$PROJECT_DIR$/routes/intrus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/questionnaire.js" afterPath="$PROJECT_DIR$/routes/questionnaire.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/secret.js" afterPath="$PROJECT_DIR$/routes/secret.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/bonjour.jade" afterPath="$PROJECT_DIR$/views/bonjour.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/intrus.jade" afterPath="$PROJECT_DIR$/views/intrus.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/questionnaire.jade" afterPath="$PROJECT_DIR$/views/questionnaire.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/secret.jade" afterPath="$PROJECT_DIR$/views/secret.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,13 +34,13 @@
     <favorites_list name="cot2016" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5361991">
+    <splitter split-orientation="horizontal" split-proportion="0.4004825">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="maths.jade" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/maths.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="217">
+                <state relative-caret-position="323">
                   <caret line="19" column="96" lean-forward="false" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
                   <folding />
                 </state>
@@ -47,7 +51,7 @@
             <entry file="file://$PROJECT_DIR$/public/scripts/maths.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+                  <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
@@ -70,8 +74,8 @@
           <file leaf-file-name="bonjour.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/bonjour.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="431">
-                  <caret line="28" column="67" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+                <state relative-caret-position="306">
+                  <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -80,9 +84,12 @@
           <file leaf-file-name="bonjour.jade" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/bonjour.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-136">
-                  <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-                  <folding />
+                <state relative-caret-position="238">
+                  <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+                  <folding>
+                    <marker date="1481257273956" expanded="true" signature="85:96" ph="..." />
+                    <marker date="1481257273956" expanded="true" signature="2448:2450" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -90,8 +97,8 @@
           <file leaf-file-name="courir.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/scripts/courir.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="39" column="27" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="39" selection-end-column="27" />
+                <state relative-caret-position="663">
+                  <caret line="39" column="27" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="39" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -100,8 +107,8 @@
           <file leaf-file-name="courir.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/courir.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="30" column="3" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="30" selection-end-column="3" />
+                <state relative-caret-position="442">
+                  <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -110,8 +117,8 @@
           <file leaf-file-name="courir.jade" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/courir.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="724">
-                  <caret line="55" column="63" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="55" selection-end-column="63" />
+                <state relative-caret-position="935">
+                  <caret line="55" column="63" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="55" selection-end-column="63" />
                   <folding />
                 </state>
               </provider>
@@ -194,8 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -334,6 +339,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,33 +453,34 @@
       <workItem from="1481082514770" duration="1384000" />
       <workItem from="1481084456045" duration="1929000" />
       <workItem from="1481086408052" duration="1988000" />
+      <workItem from="1481257338433" duration="43000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24278000" />
+    <option name="totallyTimeSpent" value="24321000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13645834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20930232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19344608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20930232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19344608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -704,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="50" column="39" lean-forward="false" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,31 +726,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <marker date="1481080638873" expanded="true" signature="2229:2234" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/courir.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="55" column="63" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="55" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/courir.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="39" column="27" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="39" selection-end-column="27" />
+        <state relative-caret-position="935">
+          <caret line="55" column="63" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="55" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/maths.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
+        <state relative-caret-position="323">
           <caret line="19" column="96" lean-forward="false" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
           <folding />
         </state>
@@ -753,24 +749,19 @@
     <entry file="file://$PROJECT_DIR$/public/scripts/maths.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/courir.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="3" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="30" selection-end-column="3" />
+          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/bonjour.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="238">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <marker date="1481257273956" expanded="true" signature="85:96" ph="..." />
+            <marker date="1481257273956" expanded="true" signature="2448:2450" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -782,10 +773,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/courir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/courir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="27" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="39" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/bonjour.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="28" column="67" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+        <state relative-caret-position="306">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
           <folding />
         </state>
       </provider>
