@@ -15,19 +15,27 @@ global.routeur.get('/', function(req, res, next) {
   var params = {};
   params.title = 'Que la chasse commence !';
 
-  params.step1Url = '/questionnaire';
+  if(!req.cookies.questionnaireResult) {
+    params.step1Url = '/questionnaire';
+  }
   if (req.cookies.questionnaireResult) {
     params.step1Result = req.cookies.questionnaireResult.success ? 'Réussie' : 'Échouée';
     params.step1Duration = millisToMinutesAndSeconds(req.cookies.questionnaireResult.durationMillis);
-    params.step2Url = '/courir';
+    if(!req.cookies.courrirResult) {
+      params.step2Url = '/courir';
+    }
   }
 
   if (req.cookies.courrirResult) {
-   params.step3Url = '/secret';
+    if(!req.cookies.secretResult) {
+      params.step3Url = '/secret';
+    }
   }
 
   if (req.cookies.secretResult) {
-   params.step4Url = '/intrus';
+    if(!req.cookies.intrusResult) {
+      params.step4Url = '/intrus';
+    }
   }
 
   if (req.cookies.intrusResult) {
